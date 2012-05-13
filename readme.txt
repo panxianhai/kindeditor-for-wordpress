@@ -1,10 +1,10 @@
-=== Plugin Name ===
+﻿=== Plugin Name ===
 Contributors: panxianhai
-Donate link: http://www.panxianhai.com/donate
+Donate link: https://me.alipay.com/panxianhai
 Tags: editor, syntax highlighting
 Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 1.1.4
+Tested up to: 3.3.2
+Stable tag: 1.2
 
 Kindeditor for wordpress
 
@@ -12,10 +12,9 @@ Kindeditor for wordpress
 
 Because most users of this plug-in are Chinese people,following I use Chinese.
 
-kindeditor是一个简单高效，易于使用的编辑器，目前最新的版本是4.0.5，内置了google code prettify，可以简单快速的插入代码，更多内容[查看这里](http://www.panxianhai.com/kindeditor-for-wordpress.html)
+kindeditor是一个简单高效，易于使用的编辑器，目前最新的版本是4.1，内置了google code prettify，可以简单快速的插入代码，更多内容[查看这里](http://panxianhai.com/kindeditor-for-wordpress.html)
 
 == Installation ==
-
 
 1. 上传kindeditor-for-wordpress文件夹到`/wp-content/plugins/`目录
 2. 激活插件即可使用，注意应关闭其他的编辑器插件
@@ -35,6 +34,10 @@ kindeditor是一个简单高效，易于使用的编辑器，目前最新的版�
 4. 插入程序代码
 
 == Changelog ==
+
+= 1.2 =
+* 更新kindeditor内核到4.1
+* 为未上传到官方插件目录之前添加了插件更新提示
 
 = 1.1.4 =
 * 为代码高亮相关文件自动载入设置了是否开启的选项

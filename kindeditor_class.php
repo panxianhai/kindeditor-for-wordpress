@@ -1,6 +1,5 @@
 <?php
 class kindeditor {
-	var $ke_version = "4.0.5";
 	var $plugin_path = "";
 	
 	function kindeditor() 
@@ -101,13 +100,13 @@ class kindeditor {
 			#ed_toolbar { display: none; }
 			.ke-container {border: none;!important}
 			.ke-icon-wpmore {
-				background-image: url(<?php echo $this->plugin_path;?>themes/default/default.gif);
+				background-image: url(<?php echo $this->plugin_path;?>themes/default/default.png);
 				background-position: 0px -1024px;
 				width: 16px;
 				height: 16px;
 			}
 			.ke-icon-blockquote {
-				background-image: url(<?php echo $this->plugin_path;?>themes/default/default.gif);
+				background-image: url(<?php echo $this->plugin_path;?>themes/default/default.png);
 				background-position: 0px -1072px;
 				width: 16px;
 				height: 16px;
