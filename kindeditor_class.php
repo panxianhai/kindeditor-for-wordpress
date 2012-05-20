@@ -36,10 +36,10 @@ class kindeditor {
 				'source', '|', 'undo', 'redo', '|', 'cut', 'copy', 'paste',
 				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', 'about', '/',
 				'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'table', 'hr', 'emoticons', 'map', 'code', 'blockquote', 'wpmore',
-				'link', 'unlink', '|', 'about'
+				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'flash', 'media', 'table', 'hr', 'emoticons', 'map', 'code', 'blockquote', 'wpmore',
+				'link', 'unlink'
 				],
 				afterChange : function() {
 					jQuery('#wp-word-count .word-count').html(this.count('text'));
@@ -106,8 +106,7 @@ class kindeditor {
 				height: 16px;
 			}
 			.ke-icon-blockquote {
-				background-image: url(<?php echo $this->plugin_path;?>themes/default/default.png);
-				background-position: 0px -1072px;
+				background-image: url(<?php echo $this->plugin_path;?>themes/default/quote.gif);
 				width: 16px;
 				height: 16px;
 			}

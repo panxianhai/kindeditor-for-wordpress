@@ -9,7 +9,7 @@
 
 KindEditor.plugin('image', function(K) {
 	var self = this, name = 'image',
-		allowImageUpload = K.undef(self.allowImageUpload, true),
+		allowImageUpload = K.undef(self.allowImageUpload, false),
 		formatUploadUrl = K.undef(self.formatUploadUrl, true),
 		allowFileManager = K.undef(self.allowFileManager, false),
 		uploadJson = K.undef(self.uploadJson, self.basePath + 'php/upload_json.php'),
