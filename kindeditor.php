@@ -27,39 +27,50 @@ register_deactivation_hook(basename(dirname(__FILE__)).'/' . basename(__FILE__),
 // Option page
 function kindeditor_option_page()
 {
-
-    //var_dump(check_admin_referer('ke_admin_options-update'));exit;
-    if ( !empty($_POST) && check_admin_referer('ke_admin_options-update') )
-    {
+    if ( !empty($_POST) && check_admin_referer('ke_admin_options-update') ) {
         update_option('ke_auto_highlight', $_POST['ke_highlight']);
-        ?>
-    <div id="message" class="updated">保存成功...</div>
-    <?php
+        update_option('ke_highlight_type', $_POST['ke_highlight_type']);
+        echo '<div id="message" class="updated">保存成功...</div>';
     }
-    $checked = '';
     if ( get_option('ke_auto_highlight') == 'yes' )
-    {
         $checked = "checked = 'checked'";
-    }
+    $type = get_option('ke_highlight_type');
+    $$type = "selected = 'selected'";
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
         <h2>Kindeditor Options</h2>
         <p>欢迎来到Kindeditor for wordpress的设置页面。</p>
         <form action="" method="post" id="kindeditor-options-form">
-            <h3><label for="ke_highlight">开启前台高亮:</label>
+            <p><label for="ke_highlight">开启前台高亮:</label>
             <input type="checkbox" id="ke_highlight" name="ke_highlight" <?php echo $checked;?> value="yes" />
-            </h3>
+            </p>
+            <p>
+                高亮样式：
+                <select name="ke_highlight_type">
+                    <option value="prettify" <?php echo $prettify; ?>>Default</option>
+                    <option value="desert" <?php echo $desert; ?>>Desert</option>
+                    <option value="obsidian" <?php echo $obsidian; ?>>Obsidian</option>
+                    <option value="sunburst" <?php echo $sunburst; ?>>Sunburst</option>
+                </select>
+            </p>
         <p><input type="submit" name="submit" value="保存设置" /></p>
         <?php wp_nonce_field('ke_admin_options-update'); ?>
         </form>
     </div>
     <?php
 }
+add_action('admin_menu', 'register_top_menu');
 
-function kindeditor_plugin_menu()
+function register_top_menu()
+{
+    add_menu_page('Kindeditor设置', 'Kindeditor', '8', 'kindeditor_hignlight', 'kindeditor_option_page', '');
+}
+
+/*function kindeditor_plugin_menu()
 {
     add_options_page('kindeditor settings', 'Kindeditor设置','manage_options', 'kindeditor-plugin', 'kindeditor_option_page');
 }
 
 add_action('admin_menu', 'kindeditor_plugin_menu');
+*/
