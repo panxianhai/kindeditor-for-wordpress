@@ -791,7 +791,7 @@
 	*display: inline;
 }
 .ke-button {
-	background-position: right -25px;
+	/*background-position: right -25px;*/
 	padding: 0 12px;
 	margin: 0;
 	font-family: "sans serif",tahoma,verdana,helvetica;
@@ -836,6 +836,9 @@
 	vertical-align: middle;
 	zoom: 1;
 	*display: inline;
+}
+.ke-upload-button {
+	position: relative;
 }
 .ke-upload-area {
 	position: relative;
@@ -1142,4 +1145,7 @@
 }
 .ke-plugin-template .ke-right {
 	float: right;
+}
+input[type="text"], input[type="password"], input[type="number"], input[type="search"], input[type="email"], input[type="url"], textarea {
+	-moz-box-sizing: content-box;  
 }

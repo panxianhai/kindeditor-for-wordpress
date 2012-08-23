@@ -12,6 +12,8 @@ KindEditor.plugin('media', function(K) {
 		allowMediaUpload = K.undef(self.allowMediaUpload, false),
 		allowFileManager = K.undef(self.allowFileManager, false),
 		formatUploadUrl = K.undef(self.formatUploadUrl, true),
+		extraParams = K.undef(self.extraFileUploadParams, {}),
+		filePostName = K.undef(self.filePostName, 'imgFile'),
 		uploadJson = K.undef(self.uploadJson, self.basePath + 'php/upload_json.php');
 	self.plugin.media = {
 		edit : function() {
@@ -93,7 +95,8 @@ KindEditor.plugin('media', function(K) {
 			if (allowMediaUpload) {
 				var uploadbutton = K.uploadbutton({
 					button : K('.ke-upload-button', div)[0],
-					fieldName : 'imgFile',
+					fieldName : filePostName,
+					extraParams : extraParams,
 					url : K.addParam(uploadJson, 'dir=media'),
 					afterUpload : function(data) {
 						dialog.hideLoading();
@@ -104,7 +107,7 @@ KindEditor.plugin('media', function(K) {
 							}
 							urlBox.val(url);
 							if (self.afterUpload) {
-								self.afterUpload.call(self, url);
+								self.afterUpload.call(self, url, data, name);
 							}
 							alert(self.lang('uploadSuccess'));
 						} else {
@@ -133,6 +136,9 @@ KindEditor.plugin('media', function(K) {
 							clickFn : function(url, title) {
 								if (self.dialogs.length > 1) {
 									K('[name="url"]', div).val(url);
+									if (self.afterSelectFile) {
+										self.afterSelectFile.call(self, url);
+									}
 									self.hideDialog();
 								}
 							}
