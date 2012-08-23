@@ -3,7 +3,7 @@
 Plugin Name: Kindeditor For Wordpress
 Plugin URI: http://www.panxianhai.com/kindeditor-for-wordpress.html
 Description: kindeditor是一款轻量级的在线编辑器。
-Version: 1.2.1
+Version: 1.3
 Author: hevin
 Author URI: http://www.panxianhai.com/
 */
@@ -60,17 +60,16 @@ function kindeditor_option_page()
     </div>
     <?php
 }
-add_action('admin_menu', 'register_top_menu');
+/*add_action('admin_menu', 'register_top_menu');
 
 function register_top_menu()
 {
     add_menu_page('Kindeditor设置', 'Kindeditor', '8', 'kindeditor_hignlight', 'kindeditor_option_page', '');
-}
+}*/
 
-/*function kindeditor_plugin_menu()
+function kindeditor_plugin_menu()
 {
     add_options_page('kindeditor settings', 'Kindeditor设置','manage_options', 'kindeditor-plugin', 'kindeditor_option_page');
 }
 
 add_action('admin_menu', 'kindeditor_plugin_menu');
-*/
