@@ -11,7 +11,7 @@ KindEditor.plugin('media', function(K) {
 	var self = this, name = 'media', lang = self.lang(name + '.'),
 		allowMediaUpload = K.undef(self.allowMediaUpload, false),
 		allowFileManager = K.undef(self.allowFileManager, false),
-		formatUploadUrl = K.undef(self.formatUploadUrl, true),
+		formatUploadUrl = K.undef(self.formatUploadUrl, false),
 		extraParams = K.undef(self.extraFileUploadParams, {}),
 		filePostName = K.undef(self.filePostName, 'imgFile'),
 		uploadJson = K.undef(self.uploadJson, self.basePath + 'php/upload_json.php');

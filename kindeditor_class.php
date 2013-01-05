@@ -32,13 +32,15 @@ class kindeditor {
 			var editor;
 			var options = {
 				cssPath : ['<?php echo $this->plugin_path; ?>plugins/code/prettify.css','<?php echo $this->plugin_path; ?>style.css'],
+				uploadJson : '<?php echo $this->plugin_path ?>php/upload_json.php',
+				fileManagerJson : '<?php echo $this->plugin_path ?>php/file_manager_json.php',
 				items : [
 				'source', '|', 'undo', 'redo', '|', 'cut', 'copy', 'paste',
 				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
 				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', 'about', '/',
 				'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'flash', 'media', 'table', 'hr', 'emoticons', 'map', 'code', 'blockquote', 'wpmore',
+				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage','flash', 'media', 'table', 'hr', 'emoticons', 'map', 'code', 'blockquote', 'wpmore',
 				'link', 'unlink'
 				],
 				afterChange : function() {

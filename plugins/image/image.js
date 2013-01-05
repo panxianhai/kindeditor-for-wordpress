@@ -9,7 +9,7 @@
 
 KindEditor.plugin('image', function(K) {
 	var self = this, name = 'image',
-		allowImageUpload = K.undef(self.allowImageUpload, false),
+		allowImageUpload = K.undef(self.allowImageUpload, true),
 		formatUploadUrl = K.undef(self.formatUploadUrl, true),
 		allowFileManager = K.undef(self.allowFileManager, false),
 		uploadJson = K.undef(self.uploadJson, self.basePath + 'php/upload_json.php'),
@@ -184,7 +184,6 @@ KindEditor.plugin('image', function(K) {
 		var uploadbutton = K.uploadbutton({
 			button : K('.ke-upload-button', div)[0],
 			fieldName : filePostName,
-			url : K.addParam(uploadJson, 'dir=image'),
 			form : K('.ke-form', div),
 			target : target,
 			width: 60,
@@ -277,7 +276,7 @@ KindEditor.plugin('image', function(K) {
 				return false;
 			}
 		});
-		if (tabIndex === 0) {
+		if (showRemote && tabIndex === 0) {
 			urlBox[0].focus();
 			urlBox[0].select();
 		}
