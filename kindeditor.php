@@ -3,7 +3,7 @@
 Plugin Name: Kindeditor For Wordpress
 Plugin URI: http://wordpress.org/extend/plugins/kindeditor-for-wordpress/
 Description: kindeditor是一款轻量级的在线编辑器。
-Version: 1.3.2
+Version: 1.3.3
 Author: hevin
 Author URI: http://weibo.com/hevinpan
 */
@@ -41,7 +41,7 @@ function kindeditor_option_page()
         <?php screen_icon(); ?>
         <h2>Kindeditor Options</h2>
         <p>欢迎来到Kindeditor for wordpress的设置页面。</p>
-        <p>关注插件的最近更新 <a href="http://weibo.com/hevinpan" target="_blank">新浪微博</a>,可以把自己的需求通过微博发布到 <a href="http://huati.weibo.com/k/kindeditor+for+wordpress" target="_blank">#kindeditor for wordpress#</a> 话题，然后@我。</p>
+        <p><a href="https://github.com/panxianhai/kindeditor-for-wordpress/issues">提交问题</a> </p>
         <form action="" method="post" id="kindeditor-options-form">
             <p><label for="ke_highlight">开启前台高亮:</label>
             <input type="checkbox" id="ke_highlight" name="ke_highlight" <?php echo $checked;?> value="yes" />
