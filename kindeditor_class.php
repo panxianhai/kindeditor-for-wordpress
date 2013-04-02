@@ -93,7 +93,7 @@ class kindeditor {
     function add_head_style()
     {
     	$type = get_option('ke_highlight_type');
-        wp_enqueue_style('prettify-css', $this->plugin_path .'includes/code/' . $type . '.css','','20110329');
+        wp_enqueue_style('prettify-css', $this->plugin_path .'plugins/code/' . $type . '.css','','20110329');
     }
 	
 	function add_admin_head()
