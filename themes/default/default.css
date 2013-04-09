@@ -799,7 +799,7 @@
 }
 .ke-button-outer {
 	background-position: 0 -25px;
-	padding: 0;
+    padding: 0;
 	position: relative;
 	display: -moz-inline-stack;
 	display: inline-block;
@@ -808,7 +808,7 @@
 	*display: inline;
 }
 .ke-button {
-	/*background-position: right -25px;*/
+	background-position: right -25px;
 	padding: 0 12px;
 	margin: 0;
 	font-family: "sans serif",tahoma,verdana,helvetica;
@@ -824,7 +824,7 @@
 	font-family: "sans serif",tahoma,verdana,helvetica;
 	font-size: 12px;
 	line-height: 17px;
-	height: 17px;
+	height: 25px;
 	padding: 2px 4px;
 	border-color: #848484 #E0E0E0 #E0E0E0 #848484;
 	border-style: solid;
