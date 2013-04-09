@@ -87,8 +87,8 @@ if (empty($_FILES) === false) {
 	$file_ext = trim($file_ext);
 	$file_ext = strtolower($file_ext);
 	//检查扩展名
-	if (in_array($file_ext, $ext_arr[$dir_name]) === false) {
-		alert("上传文件扩展名是不允许的扩展名。\n只允许" . implode(",", $ext_arr[$dir_name]) . "格式。");
+	if (in_array($file_ext, $ext_arr['image']) === false) {
+		alert("上传文件扩展名是不允许的扩展名。\n只允许" . implode(",", $ext_arr['image']) . "格式。");
 	}
 	//创建文件夹
 	if ( ! is_dir($save_path . date('Y'))) {
