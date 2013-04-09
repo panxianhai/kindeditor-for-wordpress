@@ -38,9 +38,9 @@ class kindeditor {
 				'source', '|', 'undo', 'redo', '|', 'cut', 'copy', 'paste',
 				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', 'about', '/',
+				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'map', 'baidumap','fullscreen','about', '/',
 				'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage','flash', 'media', 'table', 'hr', 'emoticons', 'map', 'code', 'blockquote', 'wpmore',
+				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage','flash', 'media', 'table', 'hr', 'emoticons', 'code', 'anchor', 'blockquote', 'wpmore',
 				'link', 'unlink'
 				],
 				afterChange : function() {
