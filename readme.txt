@@ -4,7 +4,7 @@ Donate link: https://me.alipay.com/panxianhai
 Tags: editor, syntax highlighting
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 
 Kindeditor for wordpress
 
@@ -12,7 +12,7 @@ Kindeditor for wordpress
 
 Because most users of this plug-in are Chinese people,following I use Chinese.
 
-kindeditor是一个简单高效，易于使用的编辑器，目前最新的版本是4.1.5，内置了google code prettify，可以简单快速的插入代码。
+kindeditor是一个简单高效，易于使用的编辑器，内置了google code prettify，可以简单快速的插入代码。
 
 == Installation ==
 
@@ -34,6 +34,10 @@ kindeditor是一个简单高效，易于使用的编辑器，目前最新的版�
 4. 插入程序代码
 
 == Changelog ==
+
+= 1.3.4 =
+* 更新kindeditor到4.1.6
+* 调整部分样式
 
 = 1.3.3 =
 * 更新kindeditor到4.1.5
