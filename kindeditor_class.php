@@ -16,12 +16,16 @@ class kindeditor {
 	{
 		global $current_user;
 		update_user_option($current_user->id, 'rich_editing', 'true', true);
+        delete_option('ke_auto_highlight');
+        delete_option('ke_highlight_type');
 	}
 
 	function activate()
 	{
 		global $current_user;
 		update_user_option($current_user->id, 'rich_editing', 'false', true);
+        add_option('ke_auto_highlight', '');
+        add_option('ke_highlight_type', 'prettify');
 	}
 	
 	function load_kindeditor()
