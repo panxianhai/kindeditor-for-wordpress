@@ -61,13 +61,6 @@ function kindeditor_option_page()
     </div>
     <?php
 }
-/*add_action('admin_menu', 'register_top_menu');
-
-function register_top_menu()
-{
-    add_menu_page('Kindeditor设置', 'Kindeditor', '8', 'kindeditor_hignlight', 'kindeditor_option_page', '');
-}*/
-
 function kindeditor_plugin_menu()
 {
     add_options_page('kindeditor settings', 'Kindeditor设置','manage_options', 'kindeditor-plugin', 'kindeditor_option_page');
