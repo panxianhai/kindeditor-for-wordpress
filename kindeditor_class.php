@@ -39,7 +39,7 @@ class kindeditor {
 				uploadJson : '<?php echo $this->plugin_path ?>php/upload_json.php',
 				fileManagerJson : '<?php echo $this->plugin_path ?>php/file_manager_json.php',
 				items : [
-				'source', '|', 'undo', 'redo', '|', 'cut', 'copy', 'paste',
+				'source', '|', 'undo', 'redo', '|', 'template', 'cut', 'copy', 'paste',
 				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
 				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'map', 'baidumap','fullscreen','about', '/',
