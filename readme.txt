@@ -25,6 +25,9 @@ kindeditor是一个简单高效，易于使用的编辑器，内置了google cod
 
 目前这个功能还没有确定一个好的解决方案，所以只是在代码视图插入了<!--more-->，可视化界面没有任何输出。
 
+= 如何开启代码高亮？ =
+
+在wordpress后台启用kindeditor插件，然后在 设置->kindeditor设置里设置代码高亮。
 
 == Screenshots ==
 
