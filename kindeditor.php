@@ -7,8 +7,14 @@ Version: 1.3.7
 Author: hevin
 Author URI: http://weibo.com/hevinpan
 */
-
+if (is_admin()) require_once(ABSPATH . 'wp-includes/pluggable.php');
 require_once('kindeditor_class.php');
+// 关闭富文本编辑，否则会同时出现两个编辑器
+global $current_user;
+$is_rich_editing = get_user_option('rich_editing');
+if ($is_rich_editing) {
+    update_user_option($current_user->id, 'rich_editing', 'false', true);
+}
 add_action('personal_options_update', array(&$kindeditor, 'user_personalopts_update'));
 add_action('admin_head', array(&$kindeditor, 'add_admin_head'));
 add_action('edit_form_advanced', array(&$kindeditor, 'load_kindeditor'));
