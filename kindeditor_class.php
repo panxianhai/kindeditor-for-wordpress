@@ -26,6 +26,10 @@ class kindeditor {
 		update_user_option($current_user->id, 'rich_editing', 'false', true);
         add_option('ke_auto_highlight', '');
         add_option('ke_highlight_type', 'prettify');
+        // 检查uploads文件夹是否建立
+        if (!file_exists(ABSPATH . 'wp-content/uploads')) {
+            @mkdir(ABSPATH . 'wp-content/uploads');
+        }
 	}
 	
 	function load_kindeditor()

@@ -7,7 +7,7 @@ Version: 1.3.7
 Author: hevin
 Author URI: http://weibo.com/hevinpan
 */
-if (is_admin()) require_once(ABSPATH . 'wp-includes/pluggable.php');
+require_once(ABSPATH . 'wp-includes/pluggable.php');
 require_once('kindeditor_class.php');
 // 关闭富文本编辑，否则会同时出现两个编辑器
 global $current_user;
