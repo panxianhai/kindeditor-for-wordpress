@@ -80,7 +80,7 @@ if (empty($_FILES) === false) {
 	if ($file_size > $max_size) {
 		alert("上传文件大小超过限制。");
 	}
-	
+
 	//获得文件扩展名
 	$temp_arr = explode(".", $file_name);
 	$file_ext = array_pop($temp_arr);

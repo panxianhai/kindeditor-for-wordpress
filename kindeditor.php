@@ -13,7 +13,7 @@ require_once('kindeditor_class.php');
 global $current_user;
 $is_rich_editing = get_user_option('rich_editing');
 if ($is_rich_editing) {
-    update_user_option($current_user->id, 'rich_editing', 'false', true);
+    update_user_option($current_user->ID, 'rich_editing', 'false', true);
 }
 add_action('personal_options_update', array(&$kindeditor, 'user_personalopts_update'));
 add_action('admin_head', array(&$kindeditor, 'add_admin_head'));

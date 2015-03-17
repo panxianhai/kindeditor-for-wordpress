@@ -1,21 +1,16 @@
 <?php
 class kindeditor {
 	var $plugin_path = "";
-	
-	function kindeditor() 
-	{
-		$this->__construct();
-	}
-	
+
 	function __construct()
 	{
 		$this->plugin_path = plugins_url('/',__FILE__);
 	}
-	
+
 	function deactivate()
 	{
 		global $current_user;
-		update_user_option($current_user->id, 'rich_editing', 'true', true);
+		update_user_option($current_user->ID, 'rich_editing', 'true', true);
         delete_option('ke_auto_highlight');
         delete_option('ke_highlight_type');
 	}
@@ -23,15 +18,11 @@ class kindeditor {
 	function activate()
 	{
 		global $current_user;
-		update_user_option($current_user->id, 'rich_editing', 'false', true);
+		update_user_option($current_user->ID, 'rich_editing', 'false', true);
         add_option('ke_auto_highlight', '');
         add_option('ke_highlight_type', 'prettify');
-        // 检查uploads文件夹是否建立
-        if (!file_exists(ABSPATH . 'wp-content/uploads')) {
-            @mkdir(ABSPATH . 'wp-content/uploads');
-        }
 	}
-	
+
 	function load_kindeditor()
 	{
 		?>
@@ -62,29 +53,29 @@ class kindeditor {
 		</script>
 		<?php
 	}
-	
+
 	function user_personalopts_update()
     {
         global $current_user;
-        update_user_option($current_user->id, 'rich_editing', 'false', true);
+        update_user_option($current_user->ID, 'rich_editing', 'false', true);
     }
-	
+
 	function add_admin_js()
 	{
-		wp_deregister_script(array('media-upload')); 
-		wp_enqueue_script('media-upload', $this->plugin_path .'media-upload.js', array('thickbox'), '20110922'); 
+		wp_deregister_script(array('media-upload'));
+		wp_enqueue_script('media-upload', $this->plugin_path .'media-upload.js', array('thickbox'), '20110922');
 		wp_enqueue_script('kindeditor', $this->plugin_path . 'kindeditor.js');
 		wp_enqueue_script('zh_CN', $this->plugin_path . 'lang/zh_CN.js');
 		wp_enqueue_script('plugins', $this->plugin_path . 'plugins.js');
 	}
-	
+
 	function add_admin_style()
-	{	
+	{
 		$ke_style = plugins_url('themes/default/default.css', __FILE__);
 		wp_register_style('default', $ke_style);
 		wp_enqueue_style('default');
 	}
-	
+
 	function add_head_script()
 	{
         //wp_enqueue_script('jquery');
@@ -103,7 +94,7 @@ class kindeditor {
     	$type = get_option('ke_highlight_type');
         wp_enqueue_style('prettify-css', $this->plugin_path .'plugins/code/' . $type . '.css','','20110329');
     }
-	
+
 	function add_admin_head()
     {
 		?>
