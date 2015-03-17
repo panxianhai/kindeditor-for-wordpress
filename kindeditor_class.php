@@ -30,6 +30,7 @@ class kindeditor {
 		//<![CDATA[
 			var editor;
 			var options = {
+                filterMode: false,
 				cssPath : ['<?php echo $this->plugin_path; ?>plugins/code/prettify.css','<?php echo $this->plugin_path; ?>style.css'],
 				uploadJson : '<?php echo $this->plugin_path ?>php/upload_json.php',
 				fileManagerJson : '<?php echo $this->plugin_path ?>php/file_manager_json.php',
