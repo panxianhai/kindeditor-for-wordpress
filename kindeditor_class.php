@@ -1,68 +1,57 @@
 <?php
-class kindeditor {
-	var $plugin_path = "";
+class kindeditor
+{
+	private $plugin_path;
 
-	function __construct()
-	{
+	public function __construct() {
 		$this->plugin_path = plugins_url('/',__FILE__);
 	}
 
-	function deactivate()
-	{
+	public function deactivate() {
 		global $current_user;
 		update_user_option($current_user->ID, 'rich_editing', 'true', true);
-        delete_option('ke_auto_highlight');
-        delete_option('ke_highlight_type');
 	}
 
-	function activate()
-	{
+	public function activate() {
 		global $current_user;
 		update_user_option($current_user->ID, 'rich_editing', 'false', true);
-        add_option('ke_auto_highlight', '');
-        add_option('ke_highlight_type', 'prettify');
 	}
 
-	function load_kindeditor()
-	{
+	public function load_kindeditor() {
 		?>
 		<script type="text/javascript">
 		//<![CDATA[
 			var editor;
 			var options = {
                 filterMode: false,
-				cssPath : ['<?php echo $this->plugin_path; ?>plugins/code/prettify.css','<?php echo $this->plugin_path; ?>style.css'],
-				uploadJson : '<?php echo $this->plugin_path ?>php/upload_json.php',
-				fileManagerJson : '<?php echo $this->plugin_path ?>php/file_manager_json.php',
+                cssPath : ['<?php echo $this->plugin_path; ?>style.css'],
 				items : [
 				'source', '|', 'undo', 'redo', '|', 'template', 'cut', 'copy', 'paste',
 				'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
 				'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-				'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'map', 'baidumap','fullscreen','about', '/',
+				'superscript', 'clearhtml', 'quickformat', 'selectall', '/',
 				'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage','flash', 'media', 'table', 'hr', 'emoticons', 'code', 'anchor', 'blockquote', 'wpmore',
-				'link', 'unlink'
+				'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'table', 'hr', 'anchor', 'blockquote', 'wpmore',
+				'link', 'unlink', '|', 'map', 'baidumap','fullscreen','about'
 				],
 				afterChange : function() {
 					jQuery('#wp-word-count .word-count').html(this.count('text'));
 				}
 			};
 			KindEditor.ready(function(K) {
-					editor = K.create('#content',options);
+				editor = K.create('#content',options);
 			});
 		//]]>
 		</script>
 		<?php
 	}
 
-	function user_personalopts_update()
-    {
+	public function user_personalopts_update() {
         global $current_user;
         update_user_option($current_user->ID, 'rich_editing', 'false', true);
     }
 
-	function add_admin_js()
-	{
+	public function add_admin_js() {
 		wp_deregister_script(array('media-upload'));
 		wp_enqueue_script('media-upload', $this->plugin_path .'media-upload.js', array('thickbox'), '20110922');
 		wp_enqueue_script('kindeditor', $this->plugin_path . 'kindeditor.js');
@@ -70,34 +59,13 @@ class kindeditor {
 		wp_enqueue_script('plugins', $this->plugin_path . 'plugins.js');
 	}
 
-	function add_admin_style()
-	{
+	public function add_admin_style() {
 		$ke_style = plugins_url('themes/default/default.css', __FILE__);
 		wp_register_style('default', $ke_style);
 		wp_enqueue_style('default');
 	}
 
-	function add_head_script()
-	{
-        //wp_enqueue_script('jquery');
-	    wp_enqueue_script('prettify-js', $this->plugin_path .'plugins/code/prettify.js','','20110329');
-        ?>
-        <script type="text/javascript">
-             window.onload = function(){
-                 prettyPrint();
-             }
-        </script>
-        <?php
-	}
-
-    function add_head_style()
-    {
-    	$type = get_option('ke_highlight_type');
-        wp_enqueue_style('prettify-css', $this->plugin_path .'plugins/code/' . $type . '.css','','20110329');
-    }
-
-	function add_admin_head()
-    {
+	public function add_admin_head() {
 		?>
 		<style type="text/css">
 			#ed_toolbar { display: none; }

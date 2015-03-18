@@ -1,10 +1,10 @@
 ﻿=== Plugin Name ===
 Contributors: panxianhai
-Donate link: https://me.alipay.com/panxianhai
+Donate link: http://weibo.com/hevinpan
 Tags: editor, syntax highlighting
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 1.3.7
+Tested up to: 4.1.1
+Stable tag: 1.4
 
 Kindeditor for wordpress
 
@@ -12,7 +12,7 @@ Kindeditor for wordpress
 
 Because most users of this plug-in are Chinese people,following I use Chinese.
 
-kindeditor是一个简单高效，易于使用的编辑器，内置了google code prettify，可以简单快速的插入代码。
+kindeditor是一个简单高效，易于使用的编辑器。
 
 == Installation ==
 
@@ -27,7 +27,7 @@ kindeditor是一个简单高效，易于使用的编辑器，内置了google cod
 
 = 如何开启代码高亮？ =
 
-在wordpress后台启用kindeditor插件，然后在 设置->kindeditor设置里设置代码高亮。
+1.4版本取消了内置的代码高亮。
 
 == Screenshots ==
 
@@ -37,6 +37,11 @@ kindeditor是一个简单高效，易于使用的编辑器，内置了google cod
 4. 插入程序代码
 
 == Changelog ==
+
+＝ 1.4 ＝
+* 精简功能(去掉了图片上传等功能)
+* 更改filterMode为false
+* 精简代码
 
 = 1.3.7 =
 * 更新kindeditor到4.1.10
