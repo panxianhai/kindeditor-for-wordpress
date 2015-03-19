@@ -4,7 +4,7 @@ Donate link: http://weibo.com/hevinpan
 Tags: editor, syntax highlighting
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.4
+Stable tag: 1.4.1
 
 Kindeditor for wordpress
 
@@ -37,6 +37,9 @@ kindeditor是一个简单高效，易于使用的编辑器。
 4. 插入程序代码
 
 == Changelog ==
+
+= 1.4.1 =
+* 修正了按钮无法显示的问题
 
 ＝ 1.4 ＝
 * 精简功能(去掉了图片上传等功能)
